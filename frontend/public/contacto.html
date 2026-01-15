@@ -12,12 +12,204 @@
     
     <title>Contacto - Fundación Red de Vida</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .section-header {
+            position: relative;
+            overflow: hidden;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .header-video-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 100vh;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+            opacity: 0.4;
+        }
+        
+        .header-video-container iframe {
+            width: 100vw;
+            height: 56.25vw;
+            min-height: 100vh;
+            min-width: 177.77vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .section-header .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .section-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+        
+        .section-header h1 {
+            color: white;
+            font-size: 3.5em;
+            margin: 0 0 20px 0;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .section-header p {
+            color: white;
+            font-size: 1.3em;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Sección de información de contacto mejorada */
+        .contact-info-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #8B0000 100%);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #8B0000 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 35px;
+            box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover .contact-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 12px 30px rgba(139, 0, 0, 0.5);
+        }
+        
+        .contact-card h3 {
+            font-size: 1.8em;
+            color: #1a1a1a;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+        }
+        
+        .contact-card p {
+            font-size: 1.1em;
+            color: #555;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .contact-card a {
+            color: #8B0000;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card a:hover {
+            color: #1a1a1a;
+            text-decoration: underline;
+        }
+        
+        .contact-location {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .location-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #8B0000 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+        }
+        
+        .location-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(139, 0, 0, 0.5);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- La navbar se cargará automáticamente aquí -->
 
-    <!-- Header -->
+    <!-- Header con video de fondo -->
     <section class="section-header">
+        <div class="header-video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/lsGyraGsgR8?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&playlist=lsGyraGsgR8" 
+                frameborder="0" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen>
+            </iframe>
+        </div>
         <div class="container">
             <h1>Contáctanos</h1>
             <p>Estamos aquí para responder tus preguntas</p>
@@ -25,23 +217,34 @@
     </section>
 
     <!-- Info de Contacto -->
-    <section class="section section-light">
-        <div class="container">
-            <div class="contacto-info-grid">
-                <div class="contacto-card">
-                    <div class="contacto-icon">📞</div>
-                    <h3>Teléfono</h3>
-                    <p>+57 6017913472</p>
-                </div>
-                <div class="contacto-card">
-                    <div class="contacto-icon">📧</div>
-                    <h3>Email</h3>
-                    <p>freddevida2@gmail.com</p>
-                </div>
-                <div class="contacto-card">
-                    <div class="contacto-icon">📍</div>
-                    <h3>Ubicación</h3>
-                    <p>Transversal 18h #78c-65, Bogotá</p>
+    <section class="contact-info-section">
+        <div class="contact-info-grid">
+            <!-- Teléfono -->
+            <div class="contact-card">
+                <div class="contact-icon">📞</div>
+                <h3>Teléfono</h3>
+                <p><a href="tel:+576017913472">+57 6017913472</a></p>
+                <p style="margin-top: 10px; font-size: 0.95em; color: #777;">Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+            </div>
+            
+            <!-- Email -->
+            <div class="contact-card">
+                <div class="contact-icon">✉️</div>
+                <h3>Email</h3>
+                <p><a href="mailto:freddevida2@gmail.com">freddevida2@gmail.com</a></p>
+                <p style="margin-top: 10px; font-size: 0.95em; color: #777;">Te responderemos en 24 horas</p>
+            </div>
+            
+            <!-- Ubicación -->
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h3>Ubicación</h3>
+                <div class="contact-location">
+                    <p>Transversal 18h #78c-65<br>Bogotá, Colombia</p>
+                    <a href="https://maps.google.com/?q=Transversal+18h+78c-65+Bogota" target="_blank" class="location-link">
+                        <span>🗺️</span>
+                        <span>Ver en Google Maps</span>
+                    </a>
                 </div>
             </div>
         </div>
