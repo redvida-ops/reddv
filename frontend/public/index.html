@@ -120,7 +120,7 @@
                         <h3 id="carouselName">Juan</h3>
                         <p class="age" id="carouselAge">📅 8 años</p>
                         <p class="description" id="carouselDesc">Juan necesita educación y apoyo emocional para cumplir sus sueños de ser ingeniero.</p>
-                        <button class="btn-primary btn-secondary">Apadrina a <span id="carouselNameBtn">Juan</span></button>
+                        <a href="apadrina.html" class="btn-primary btn-secondary" id="carousel-btn">Apadrina a <span id="carouselNameBtn">Juan</span></a>
                     </div>
                 </div>
                 <div class="carousel-controls">
@@ -214,6 +214,60 @@
     </div>
 
     <script src="js/script.js"></script>
+    <script>
+        const niños = [
+            { 
+                id: 1, 
+                nombre: 'Brian', 
+                edad: 5, 
+                imagen: 'images/brian.jpg', 
+                descripcion: 'Brian es un niño alegre y curioso que sueña con aprender, crecer y necesita educación y apoyo emocional.' 
+            },
+            { 
+                id: 2, 
+                nombre: 'Juliana', 
+                edad: 5, 
+                imagen: 'images/juliana.jpg', 
+                descripcion: 'Juliana, con su risa contagiosa y su imaginación sin límites, es una niña de 5 años con un corazón lleno de sueños.' 
+            },
+            { 
+                id: 3, 
+                nombre: 'Ángel', 
+                edad: 7, 
+                imagen: 'images/angel.jpg', 
+                descripcion: 'Ángel, a sus 7 años, vive en una comunidad donde la pobreza es una realidad cotidiana.' 
+            }
+        ];
+
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const niño = niños[currentIndex];
+            document.getElementById('carouselImage').src = niño.imagen;
+            document.getElementById('carouselName').textContent = niño.nombre;
+            document.getElementById('carouselAge').textContent = `📅 ${niño.edad} años`;
+            document.getElementById('carouselDesc').textContent = niño.descripcion;
+            document.getElementById('carouselNameBtn').textContent = niño.nombre.toUpperCase();
+            document.getElementById('carouselCurrent').textContent = `${currentIndex + 1}`;
+            document.getElementById('carouselTotal').textContent = `${niños.length}`;
+            
+            // Actualizar el enlace del botón
+            document.getElementById('carousel-btn').href = 'apadrina.html';
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % niños.length;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + niños.length) % niños.length;
+            updateCarousel();
+        }
+
+        updateCarousel();
+    </script>
     <script src="js/navbar-loader.js"></script>
+    <script src="js/footer-loader.js"></script>
 </body>
 </html>
