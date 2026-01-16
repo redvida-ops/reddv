@@ -3,14 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+    
     <title>Donar - Fundación Red de Vida</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .section-header.donar-header {
+            position: relative;
+            background-image: url('images/fondodedonar.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .section-header.donar-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        
+        .section-header.donar-header .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .section-header.donar-header h1 {
+            color: white;
+            font-size: 3.5em;
+            margin: 0 0 20px 0;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        
+        .section-header.donar-header p {
+            color: white;
+            font-size: 1.5em;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+    </style>
 </head>
 <body>
     <!-- La navbar se cargará automáticamente aquí -->
 
     <!-- Header -->
-    <section class="section-header">
+    <section class="section-header donar-header">
         <div class="container">
             <h1>Haz una Donación</h1>
             <p>Tu ayuda transforma vidas</p>
