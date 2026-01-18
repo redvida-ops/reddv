@@ -13,6 +13,44 @@
     <title>Red de Desarrollo Vecinal</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Estilos específicos para el carrusel de index */
+        .carousel-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+        }
+        
+        .carousel-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+            transition: transform 0.3s ease;
+            background: white;
+            padding: 10px;
+        }
+        
+        .carousel-image:hover img {
+            transform: scale(1.02);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .carousel-image {
+                min-height: 300px;
+            }
+            
+            .carousel-image img {
+                height: 300px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -87,7 +125,7 @@
                         <div class="card-icon">💪</div>
                     </div>
                     <h3>Salud Física</h3>
-                    <p>Alimentación nutritiva, valoración médica, educación sexual y cuidado integral de la salud.</p>
+                    <p>Alimentación nutritiva, valoración médica y cuidado integral de la salud.</p>
                 </div>
                 <div class="card card-dark card-hover animate-on-scroll">
                     <div class="card-icon-wrapper">
@@ -112,13 +150,13 @@
             <div class="carousel">
                 <div class="carousel-container">
                     <div class="carousel-image" onclick="openImageModal()" style="cursor: pointer;">
-                        <img id="carouselImage" src="images/juan.jpg" alt="Niño">
+                        <img id="carouselImage" src="images/brian.jpg" alt="Niño">
                     </div>
                     <div class="carousel-info">
-                        <h3 id="carouselName">Juan</h3>
-                        <p class="age" id="carouselAge">📅 8 años</p>
-                        <p class="description" id="carouselDesc">Juan necesita educación y apoyo emocional para cumplir sus sueños de ser ingeniero.</p>
-                        <a href="apadrina.html" class="btn-primary btn-secondary" id="carousel-btn">Apadrina a <span id="carouselNameBtn">Juan</span></a>
+                        <h3 id="carouselName">Brian</h3>
+                        <p class="age" id="carouselAge">📅 5 años</p>
+                        <p class="description" id="carouselDesc">Brian es un niño alegre y curioso que sueña con aprender, crecer y necesita educación y apoyo emocional.</p>
+                        <a href="apadrina.html" class="btn-primary btn-secondary" id="carousel-btn">Apadrina a <span id="carouselNameBtn">BRIAN</span></a>
                     </div>
                 </div>
                 <div class="carousel-controls">
@@ -181,7 +219,7 @@
                         </div>
                         <div class="footer-item">
                             <i class="fas fa-phone"></i>
-                            <span>+57 6017913472</span>
+                            <span>+57 313 422 29 47</span>
                         </div>
                     </div>
                     
@@ -248,8 +286,6 @@
             document.getElementById('carouselNameBtn').textContent = niño.nombre.toUpperCase();
             document.getElementById('carouselCurrent').textContent = `${currentIndex + 1}`;
             document.getElementById('carouselTotal').textContent = `${niños.length}`;
-            
-            // Actualizar el enlace del botón
             document.getElementById('carousel-btn').href = 'apadrina.html';
         }
 
