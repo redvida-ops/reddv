@@ -80,7 +80,8 @@
         
         .child-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 50px rgba(220, 38, 38, 0.3);
+            border: 3px solid #dc2626;
         }
         
         .child-card::before {
@@ -91,18 +92,27 @@
             width: 100%;
             height: 5px;
             background: linear-gradient(135deg, #1a1a1a 0%, #8B0000 100%);
+            transition: all 0.4s ease;
+        }
+        
+        .child-card:hover::before {
+            height: 8px;
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
         }
         
         .child-image {
             width: 100%;
             height: 300px;
             object-fit: cover;
-            object-position: center top;
-            transition: transform 0.4s ease;
+            object-position: center;
+            transition: all 0.4s ease;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
         
         .child-card:hover .child-image {
             transform: scale(1.05);
+            filter: brightness(1.1);
         }
         
         .child-info {
@@ -342,6 +352,111 @@
             font-weight: 600;
         }
         
+        /* Estilos para la sección de beneficios estilo Compassion */
+        .benefits-section {
+            background: #000000;
+            padding: 80px 20px;
+            color: white;
+        }
+        
+        .benefits-section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .benefits-subtitle {
+            text-align: center;
+            font-size: 1.3em;
+            margin-bottom: 60px;
+            opacity: 0.95;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .benefit-card {
+            text-align: center;
+            padding: 40px 25px;
+            background: #1a1a2e;
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            border: 3px solid #dc2626;
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(139, 0, 0, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .benefit-card:hover {
+            background: #242442;
+            transform: translateY(-10px);
+            border-color: #ff0000;
+            box-shadow: 0 15px 40px rgba(220, 38, 38, 0.5);
+        }
+        
+        .benefit-card:hover::before {
+            opacity: 1;
+        }
+        
+        .benefit-icon {
+            width: 90px;
+            height: 90px;
+            background: #000000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 40px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+            border: 3px solid rgba(220, 38, 38, 0.5);
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .benefit-card:hover .benefit-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 12px 30px rgba(220, 38, 38, 0.8);
+            border-color: #dc2626;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.4em;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .benefit-card p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            opacity: 0.9;
+            color: #e0e0e0;
+            position: relative;
+            z-index: 1;
+        }
+        
         @media (max-width: 768px) {
             .modal-grid {
                 grid-template-columns: 1fr;
@@ -363,6 +478,19 @@
             .benefits-compact {
                 grid-template-columns: 1fr;
             }
+            
+            .benefits-section h2 {
+                font-size: 2em;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .benefit-card {
+                padding: 35px 20px;
+            }
         }
     </style>
 </head>
@@ -374,6 +502,52 @@
         <div class="container">
             <h1>Apadrina un Niño</h1>
             <p>Sé parte de la transformación de sus vidas</p>
+        </div>
+    </section>
+
+    <!-- Beneficios del Apadrinamiento estilo Compassion -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2>$80 USD al mes proporcionará a un niño:</h2>
+            <p class="benefits-subtitle">Tu aporte mensual transforma vidas de manera integral</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🍎</div>
+                    <h3>Monitoreo Nutricional e Intervención</h3>
+                    <p>Seguimiento constante de su estado nutricional y alimentación balanceada</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏥</div>
+                    <h3>Chequeos Médicos Regulares</h3>
+                    <p>Atención médica preventiva y control de salud periódico</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">❤️</div>
+                    <h3>Mentoría Individual y Amor</h3>
+                    <p>Acompañamiento personalizado y apoyo emocional constante</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">📚</div>
+                    <h3>Asistencia Educativa y Capacitación</h3>
+                    <p>Apoyo escolar, materiales educativos y desarrollo de habilidades</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">✉️</div>
+                    <h3>Comunicación Directa</h3>
+                    <p>La oportunidad de recibir palabras de aliento y apoyo de ti, su padrino</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">✝️</div>
+                    <h3>Introducción al Amor de Dios</h3>
+                    <p>Formación en valores cristianos y desarrollo espiritual</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -440,93 +614,58 @@
 
     <script src="js/script.js"></script>
     <script>
+        // Datos de los niños - CON AVATARS ILUSTRADOS POR GÉNERO
         const children = [
             {
                 id: 1,
                 nombre: 'Brian Morales',
                 edad: 5,
-                imagen: 'images/brian.jpg',
+                imagen: 'https://api.dicebear.com/7.x/big-smile/svg?seed=Brian&backgroundColor=4A90E2&radius=50',
                 historia: 'Brian es un niño alegre y curioso que sueña con aprender y crecer. Vive en una comunidad desfavorecida donde las oportunidades son limitadas. Con tu apoyo, Brian podrá acceder a educación de calidad, alimentación nutritiva y el apoyo emocional que necesita para desarrollar todo su potencial.',
                 necesidades: ['Educación', 'Nutrición', 'Apoyo emocional'],
                 paypalLink: 'https://www.paypal.com/donate/?hosted_button_id=FL7VKY2UCMKSU'
             },
             {
                 id: 2,
-                nombre: 'Cristian David Arias',
-                edad: 8,
-                imagen: 'images/cristian.jpg',
-                historia: 'Cristian es un niño de 8 años que vive en una comunidad desfavorecida. Sus condiciones no lo definen; su espíritu y sus sueños sí. A pesar de las dificultades, Cristian mantiene viva la esperanza de un futuro mejor.',
-                necesidades: ['Educación', 'Salud', 'Desarrollo'],
-                paypalLink: 'https://www.paypal.com/donate/?hosted_button_id=FL7VKY2UCMKSU'
-            },
-            {
-                id: 3,
-                nombre: 'David Santiago Liévano',
-                edad: 7,
-                imagen: 'images/david.jpg',
-                historia: 'David es un niño de 7 años lleno de energía y creatividad. Le encanta jugar y aprender cosas nuevas. Con tu apoyo, David puede continuar su educación y tener acceso a las herramientas necesarias para construir un futuro prometedor.',
-                necesidades: ['Educación', 'Recreación', 'Apoyo emocional'],
-                paypalLink: 'https://www.paypal.com/donate/?hosted_button_id=FL7VKY2UCMKSU'
-            },
-            {
-                id: 4,
                 nombre: 'Elizabeth Alemán',
                 edad: 5,
-                imagen: 'images/elizabeth.jpg',
+                imagen: 'https://api.dicebear.com/7.x/big-smile/svg?seed=Elizabeth&backgroundColor=F39C12&radius=50',
                 historia: 'Elizabeth es una niña dulce y cariñosa de 5 años. Le gusta dibujar y soñar con ser maestra algún día. Tu apoyo puede ayudarla a recibir la educación y el cuidado que merece para alcanzar sus sueños.',
                 necesidades: ['Educación', 'Nutrición', 'Salud'],
                 paypalLink: 'https://www.paypal.com/donate/?hosted_button_id=FL7VKY2UCMKSU'
             },
             {
-                id: 5,
+                id: 3,
                 nombre: 'Emily Daniela Chacón',
                 edad: 6,
-                imagen: 'images/emily.jpg',
+                imagen: 'https://api.dicebear.com/7.x/big-smile/svg?seed=Emily&backgroundColor=9B59B6&radius=50',
                 historia: 'Emily es una niña alegre de 6 años con una gran sonrisa. Le encanta cantar y bailar. Con tu ayuda, Emily puede continuar desarrollando sus talentos y recibir el apoyo necesario para crecer sana y feliz.',
                 necesidades: ['Educación', 'Arte y cultura', 'Apoyo emocional'],
                 paypalLink: 'https://www.paypal.com/donate/?hosted_button_id=FL7VKY2UCMKSU'
             },
             {
-                id: 6,
-                nombre: 'Jeremy Gómez',
-                edad: 5,
-                imagen: 'images/jeremy.jpg',
-                historia: 'Jeremy es un niño curioso de 5 años que ama explorar y aprender. Su energía y entusiasmo son contagiosos. Tu apadrinamiento puede brindarle las oportunidades que necesita para desarrollar su máximo potencial.',
-                necesidades: ['Educación', 'Nutrición', 'Desarrollo'],
-                paypalLink: 'https://www.paypal.com/donate/?hosted_button_id=FL7VKY2UCMKSU'
-            },
-            {
-                id: 7,
+                id: 4,
                 nombre: 'Juliana Arias',
                 edad: 5,
-                imagen: 'images/juliana.jpg',
+                imagen: 'https://api.dicebear.com/7.x/big-smile/svg?seed=Juliana&backgroundColor=E91E63&radius=50',
                 historia: 'Juliana, con su risa contagiosa y su imaginación sin límites, es una niña de 5 años con un corazón lleno de sueños. Le encanta escuchar cuentos y crear sus propias historias. Con tu apoyo, Juliana puede tener acceso a libros, educación y un futuro lleno de posibilidades.',
                 necesidades: ['Educación', 'Salud', 'Desarrollo'],
                 paypalLink: 'https://www.paypal.com/donate/?hosted_button_id=FL7VKY2UCMKSU'
             },
             {
-                id: 8,
+                id: 5,
                 nombre: 'Kevin Smith Hernández',
                 edad: 7,
-                imagen: 'images/kevin.jpg',
+                imagen: 'https://api.dicebear.com/7.x/big-smile/svg?seed=Kevin&backgroundColor=3498DB&radius=50',
                 historia: 'Kevin es un niño inteligente de 7 años con gran potencial. Le gusta aprender cosas nuevas y tiene un espíritu inquieto por el conocimiento. Con tu apoyo, Kevin puede desarrollar sus habilidades y construir un futuro brillante.',
                 necesidades: ['Educación', 'Desarrollo', 'Apoyo emocional'],
                 paypalLink: 'https://www.paypal.com/donate/?hosted_button_id=FL7VKY2UCMKSU'
             },
             {
-                id: 9,
-                nombre: 'Moshelle Olaya',
-                edad: 7,
-                imagen: 'images/moshelle.jpg',
-                historia: 'Moshelle es una niña alegre de 7 años llena de energía y creatividad. Le encanta jugar con sus amigos y aprender cosas nuevas cada día. Tu apadrinamiento le dará la oportunidad de recibir educación de calidad y el apoyo que necesita.',
-                necesidades: ['Educación', 'Nutrición', 'Arte y cultura'],
-                paypalLink: 'https://www.paypal.com/donate/?hosted_button_id=FL7VKY2UCMKSU'
-            },
-            {
-                id: 10,
+                id: 6,
                 nombre: 'Ángel Valeriano',
                 edad: 7,
-                imagen: 'images/angel.jpg',
+                imagen: 'https://api.dicebear.com/7.x/big-smile/svg?seed=Angel&backgroundColor=95A5A6&radius=50',
                 historia: 'Ángel, a sus 7 años, vive en una comunidad donde la pobreza es una realidad cotidiana. A pesar de las dificultades, Ángel mantiene su espíritu alegre y sus ganas de aprender. Con tu apoyo, puede tener acceso a educación y oportunidades para un mejor futuro.',
                 necesidades: ['Educación', 'Apoyo emocional', 'Nutrición'],
                 paypalLink: 'https://www.paypal.com/donate/?hosted_button_id=FL7VKY2UCMKSU'
