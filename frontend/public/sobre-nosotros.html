@@ -12,6 +12,82 @@
     
     <title>Sobre Nosotros - Fundación Red de Vida</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Override para sobre-nosotros header con nueva imagen */
+        .sobre-nosotros-header {
+            background-image: url('images/fondonuevoindex.jpeg') !important;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .sobre-nosotros-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(45, 55, 72, 0.85) 0%, rgba(26, 32, 44, 0.9) 100%);
+            z-index: 0;
+        }
+        
+        .sobre-nosotros-header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Estilos para la imagen en la sección Historia */
+        .historia-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .historia-img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .historia-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Estilos para el video en la sección Historia */
+        .historia-video-container {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .historia-video-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        .historia-video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .historia-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- La navbar se cargará automáticamente aquí -->
@@ -32,7 +108,12 @@
                 <div class="header-line"></div>
             </div>
             <div class="historia-grid">
-                <img src="images/grupo-fundacion.jpg" alt="Fundación" class="historia-img">
+                <div class="historia-video-container">
+                    <video autoplay muted loop playsinline class="historia-video">
+                        <source src="images/fondoindex.mov" type="video/mp4">
+                        Tu navegador no soporta video HTML5.
+                    </video>
+                </div>
                 <div class="historia-text">
                     <p>Fundación Red de Vida es una organización sin ánimo de lucro con más de 16 años de trayectoria en el desarrollo integral de población infantil en situación de vulnerabilidad.</p>
                     <p>Nuestra intervención se fundamenta en un modelo holístico que integra educación formal, acompañamiento psicosocial y formación en valores, con el objetivo de fortalecer las capacidades individuales y el tejido social de las comunidades donde operamos.</p>
