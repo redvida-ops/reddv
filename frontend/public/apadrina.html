@@ -457,6 +457,47 @@
             z-index: 1;
         }
         
+        /* Sección de información destacada - versión simple y pequeña */
+        .info-destacada-section {
+            background: #f8f9fa;
+            padding: 40px 20px;
+        }
+        
+        .info-destacada-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #fff3cd;
+            border-radius: 12px;
+            padding: 25px 30px;
+            border-left: 5px solid #ffc107;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-destacada-content p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #856404;
+            margin: 0 0 12px 0;
+            text-align: center;
+        }
+        
+        .info-destacada-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .info-destacada-content strong {
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+        
+        .amount-highlight {
+            background: #28a745;
+            color: white;
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-weight: 700;
+        }
+        
         @media (max-width: 768px) {
             .modal-grid {
                 grid-template-columns: 1fr;
@@ -491,6 +532,28 @@
             .benefit-card {
                 padding: 35px 20px;
             }
+            
+            .info-destacada-container {
+                padding: 35px 25px;
+            }
+            
+            .info-destacada-title {
+                font-size: 1.8em;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .info-destacada-content {
+                padding: 25px 20px;
+            }
+            
+            .info-destacada-content p {
+                font-size: 1.1em;
+            }
+            
+            .amount-box {
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
@@ -509,7 +572,7 @@
     <section class="benefits-section">
         <div class="container">
             <h2>$80 USD al mes proporcionará a un niño:</h2>
-            <p class="benefits-subtitle">Tu aporte mensual transforma vidas de manera integral</p>
+            
             
             <div class="benefits-grid">
                 <div class="benefit-card">
@@ -581,6 +644,16 @@
         <div class="container">
             <h2 class="text-center" style="margin-bottom: 40px;">Niños que Necesitan tu Apoyo</h2>
             <div class="children-grid" id="children-grid"></div>
+        </div>
+    </section>
+
+    <!-- Información Importante -->
+    <section class="info-destacada-section">
+        <div class="info-destacada-container">
+            <div class="info-destacada-content">
+                <p><strong>💳 Aceptamos donaciones por PayPal</strong></p>
+                <p>Apadrina desde <span class="amount-highlight">$80 USD</span> mensuales. Por favor comenta el nombre del niño y el monto mensual.</p>
+            </div>
         </div>
     </section>
 
