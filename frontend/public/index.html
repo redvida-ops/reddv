@@ -246,62 +246,23 @@
         </div>
     </section>
 
-    <!-- Carrusel de Niños -->
-    <section class="section section-light section-apadrina-home">
-        <div class="container">
-            <div class="section-header-content">
-                <h2>Apadrina un Niño</h2>
-                <div class="header-line"></div>
-            </div>
-            <p class="section-description">Cada niño merece oportunidades para alcanzar su máximo potencial. Conoce las historias de nuestros beneficiarios.</p>
-            
-            <div class="carousel">
-                <div class="carousel-container">
-                    <div class="carousel-image" onclick="openImageModal()" style="cursor: pointer;">
-                        <img id="carouselImage" src="https://api.dicebear.com/7.x/big-smile/svg?seed=Brian&backgroundColor=4A90E2&radius=50" alt="Brian">
-                    </div>
-                    <div class="carousel-info">
-                        <h3 id="carouselName">Brian</h3>
-                        <p class="age" id="carouselAge">📅 5 años</p>
-                        <p class="description" id="carouselDesc">Brian es un niño alegre y curioso que sueña con aprender, crecer y necesita educación y apoyo emocional.</p>
-                        <a href="apadrina.html" class="btn-primary btn-secondary" id="carousel-btn">Apadrina a <span id="carouselNameBtn">BRIAN</span></a>
-                    </div>
-                </div>
-                <div class="carousel-controls">
-                    <button onclick="prevSlide()" class="carousel-btn">❮</button>
-                    <span class="carousel-counter"><span id="carouselCurrent">1</span> de <span id="carouselTotal">3</span></span>
-                    <button onclick="nextSlide()" class="carousel-btn">❯</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Alianzas -->
     <section class="section section-dark section-alianzas">
         <div class="container">
             <div class="section-header-content">
-                <h2>Alianzas</h2>
+                <h2>Ex Asociados</h2>
                 <div class="header-line header-line-light"></div>
             </div>
-            <p class="section-description section-description-light">Aquí encontrarás las páginas web de las fundaciones con las que tenemos contacto constante para lograr alianzas positivas que ayuden a nuestros participantes</p>
+            <p class="section-description section-description-light">Organizaciones con las que hemos trabajado en el pasado</p>
             
-            <div class="alianzas-grid">
+            <div class="alianzas-grid" style="max-width: 600px; margin: 0 auto;">
                 <a href="https://www.compassioncolombia.org" target="_blank" class="alianza-card animate-on-scroll">
                     <img src="images/compassion-logo.png" alt="Compassion International" class="alianza-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <div class="alianza-placeholder" style="display:none;">
                         <i class="fas fa-handshake"></i>
                     </div>
                     <h3>Compassion International</h3>
-                    <p>Liberando a los niños de la pobreza en el nombre de Jesús</p>
-                </a>
-                
-                <a href="https://www.semillasdevidatierrafertil.org" target="_blank" class="alianza-card animate-on-scroll">
-                    <img src="images/tierra-fertil-logo.png" alt="Semillas de vida Tierra Fértil" class="alianza-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="alianza-placeholder" style="display:none;">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <h3>Tierra Fértil</h3>
-                    <p>Semillas de vida Tierra Fértil</p>
+                    <p>Ex asociado - Liberando a los niños de la pobreza en el nombre de Jesús</p>
                 </a>
             </div>
         </div>
@@ -358,57 +319,6 @@
     </div>
 
     <script src="js/script.js"></script>
-    <script>
-        const niños = [
-            { 
-                id: 1, 
-                nombre: 'Brian', 
-                edad: 5, 
-                imagen: 'https://api.dicebear.com/7.x/big-smile/svg?seed=Brian&backgroundColor=4A90E2&radius=50', 
-                descripcion: 'Brian es un niño alegre y curioso que sueña con aprender, crecer y necesita educación y apoyo emocional.' 
-            },
-            { 
-                id: 2, 
-                nombre: 'Juliana', 
-                edad: 5, 
-                imagen: 'https://api.dicebear.com/7.x/big-smile/svg?seed=Juliana&backgroundColor=E91E63&radius=50', 
-                descripcion: 'Juliana, con su risa contagiosa y su imaginación sin límites, es una niña de 5 años con un corazón lleno de sueños.' 
-            },
-            { 
-                id: 3, 
-                nombre: 'Ángel', 
-                edad: 7, 
-                imagen: 'https://api.dicebear.com/7.x/big-smile/svg?seed=Angel&backgroundColor=95A5A6&radius=50', 
-                descripcion: 'Ángel, a sus 7 años, vive en una comunidad donde la pobreza es una realidad cotidiana.' 
-            }
-        ];
-
-        let currentIndex = 0;
-
-        function updateCarousel() {
-            const niño = niños[currentIndex];
-            document.getElementById('carouselImage').src = niño.imagen;
-            document.getElementById('carouselName').textContent = niño.nombre;
-            document.getElementById('carouselAge').textContent = `📅 ${niño.edad} años`;
-            document.getElementById('carouselDesc').textContent = niño.descripcion;
-            document.getElementById('carouselNameBtn').textContent = niño.nombre.toUpperCase();
-            document.getElementById('carouselCurrent').textContent = `${currentIndex + 1}`;
-            document.getElementById('carouselTotal').textContent = `${niños.length}`;
-            document.getElementById('carousel-btn').href = 'apadrina.html';
-        }
-
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % niños.length;
-            updateCarousel();
-        }
-
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + niños.length) % niños.length;
-            updateCarousel();
-        }
-
-        updateCarousel();
-    </script>
     <script src="js/navbar-loader.js"></script>
     <script src="js/footer-loader.js"></script>
 </body>
